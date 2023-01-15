@@ -25,10 +25,12 @@ const router = createRouter({
       children:[
         {
           path:'sliders',
+          name: 'sliders',
           component:Sliders
         },
         {
           path:'categories',
+          name: 'categories',
           component:Categories,
           children:[
             {
@@ -39,18 +41,22 @@ const router = createRouter({
         },
         {
           path:'contents',
+          name: 'contents',
           component:Contents
         },
         {
           path:'customers',
+          name: 'customers',
           component:Customers
         },
         {
           path:'roles',
+          name: 'roles',
           component:Roles
         },
         {
           path:'messages',
+          name: 'messages',
           component:Messages
         },
         {
