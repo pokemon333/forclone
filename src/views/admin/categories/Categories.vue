@@ -51,7 +51,6 @@
             <th>ID</th>
             <th>NAME</th>
             <th>STATUS</th>
-            <th>SLUG</th>
             <th class=" hover:text-blue-500">
               <router-link to="categories" >CREATE</router-link>
             </th>
@@ -62,7 +61,6 @@
             <td>{{ category.id }}</td>
             <td>{{ category.name }}</td>
             <td>{{ category.status }}</td>
-            <td>{{ category.slug }}</td>
             <td>
               <buttton @click="showFunction(category.slug)" class="p-1 px-4 text-sm font-bold text-white bg-gray-500 rounded cursor-pointer hover:bg-blue-400 hover:text-gray-600">show</buttton>
               <!-- <router-link to="/" class="p-1 px-4 text-sm font-bold text-white bg-gray-500 rounded hover:bg-blue-400 hover:text-gray-600">show</router-link> -->

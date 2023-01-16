@@ -11,14 +11,17 @@ export default {
                                     {
                                           title: "Dashboard",
                                           route: "home",
+                                          icon: "fa-solid fa-house text-xs"
                                     },
                                     {
                                           title: "Customers",
                                           route: "customers",
+                                          icon: "fa-solid fa-user"
                                     },
                                     {
                                           title: "Roles",
                                           route: "roles",
+                                          icon: "fa-solid fa-check"
                                     },
 
                               ]
@@ -29,18 +32,22 @@ export default {
                                     {
                                           title: "Sliders",
                                           route: "sliders",
+                                          icon: "fa-solid fa-image"
                                     },
                                     {
                                           title: "Categories",
                                           route: "categories",
+                                          icon: "fa-solid fa-tag"
                                     },
                                     {
                                           title: "Contents",
                                           route: "contents",
+                                          icon: "fa-solid fa-pen"
                                     },
                                     {
                                           title: "Messages",
                                           route: "messages",
+                                          icon: "fa-solid fa-envelope"
                                     }
 
                               ]
@@ -57,51 +64,21 @@ export default {
       <main>
             <div class="flex w-full">
                   <!-- SIDE BAR -->
-                  <div class="flex flex-col w-1/6 text-gray-500 bg-gray-100">
+                  <div class="flex flex-col w-1/6 h-screen text-gray-500 bg-gray-100">
                         <!-- logo -->
                         <router-link to="/"
                               class="pt-2 pb-2 text-xl italic border-b-2 px-14 border-gray hover:text-blue-700">
                               <img src="../../../public/images/logo.png" class="w-2/3" alt="">
                         </router-link>
 
-                        <!-- Admin pannel -->
-                        <!-- <div class="p-3 border-b-2 border-gray px-7">
-                              <h1 class="px-5 pb-2 font-bold">ADMIN LAYOUTS</h1>
-                              <p class="p-2 text-sm hover:text-blue-500 hover:text-lg">
-                                    <router-link to="/admin"><i class="text-xs fas fa-tv-alt"></i>
-                                          Dashboard</router-link>
-                              </p>
-
-                              <p class="p-2 text-sm hover:text-blue-500 hover:text-lg">
-                                    <router-link to="/admin/customers"><i class="text-xs fas fa-user-friends"></i>
-                                          Customers</router-link>
-                              </p>
-                              <p class="p-2 text-sm hover:text-blue-500 hover:text-lg">
-                                    <router-link to="/admin/roles"><i class="text-xs fas fa-user-tag"></i>
-                                          Roles</router-link>
-                              </p>
-                        </div> -->
-
-                        <!-- contents management -->
+                        <!-- SIDE BAR -->
                         <div v-for="group, g_index in nav_groups" :key="g_index" class="p-4 border-b-2 border-gray px-7">
-                              <h1 class="px-5 pb-2 text-sm font-bold">{{ group.title }}</h1>
+                              <h1 class="px-6 pb-2 font-bold">{{ group.title }}</h1>
                               <p v-for="menu, index in group.nav_menus" :key="index"
-                                    class="p-2 hover:text-blue-500 hover:text-lg">
-                                    <router-link :to="{ name: menu.route }"><i class="text-xs fas fa-image"></i>
+                                    class="p-2 hover:text-blue-500 hover:-translate-y-1">
+                              <router-link :to="{ name: menu.route }"><i class="text-sm text-gray-500" :class=menu.icon ></i>
                                           {{ menu.title }}</router-link>
                               </p>
-                              <!-- <p class="p-2 text-sm hover:text-blue-500 hover:text-lg">
-                                    <router-link to="/admin/categories"><i class="text-xs fas fa-tag"></i>
-                                          Categories</router-link>
-                              </p>
-                              <p class="p-2 text-sm hover:text-blue-500 hover:text-lg">
-                                    <router-link to="/admin/contents"><i class="text-xs fas fa-pen"></i>
-                                          Contents</router-link>
-                              </p>
-                              <p class="p-2 text-sm hover:text-blue-500 hover:text-lg">
-                                    <router-link to="/admin/messages"><i class="text-xs far fa-comment"></i>
-                                          Messages</router-link>
-                              </p> -->
                         </div>
 
 
@@ -122,12 +99,12 @@ export default {
                               <!-- noti + profile -->
                               <div class="flex flex-row justify-end w-1/3">
                                     <div class="flex flex-row mx-4">
-                                          <a href="" class="mx-3 my-5 ml-16 text-gray-500 hover:text-blue-500"><i
+                                          <a href="" class="mx-3 my-5 ml-8 text-gray-500 hover:text-blue-500"><i
                                                       class="far fa-comment"></i> </a>
                                           <a href="" class="mx-4 my-5 text-gray-500 hover:text-blue-500"><i
                                                       class="fas fa-bell"></i> </a>
                                           <div @click="open = !open"
-                                                class="relative flex flex-row mt-1 ml-8 cursor-pointer">
+                                                class="relative flex flex-row mt-1 ml-6 cursor-pointer">
                                                 <img src="../../../public/images/profile2.webp"
                                                       class="w-6 h-6 mt-3 rounded-full" alt="">
                                                 <p
