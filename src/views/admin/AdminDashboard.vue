@@ -1,6 +1,6 @@
 <script >
-
 export default {
+
       data() {
             return {
                   open: false,
@@ -55,6 +55,9 @@ export default {
                   ],
 
             }
+      },
+      methods:{
+
       }
 }
 
@@ -80,7 +83,6 @@ export default {
                                           {{ menu.title }}</router-link>
                               </p>
                         </div>
-
 
                   </div>
                   <!-- MAIN FEED -->
