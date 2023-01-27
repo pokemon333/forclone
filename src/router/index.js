@@ -11,7 +11,8 @@ import Comments from '../views/admin/Messages.vue'
 import ShowCategory from '../views/admin/categories/ShowCategory.vue'
 import CreateSlider from '../views/admin/sliders/create.vue'
 import PublicView from '../views/PublicView.vue'
-
+import { useAuthStore } from '../../store/auth';
+import JWTService from '../JWTService'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -34,6 +35,9 @@ const router = createRouter({
       path:'/admin',
       name:'admin',
       component: AdminDashboard,
+      meta: {
+        middleware: "auth",
+      },
       children:[
         {
           path:'sliders',
@@ -85,6 +89,29 @@ const router = createRouter({
     }
 
   ]
-})
+});
+router.beforeEach((to, from, next) => {
+  const authStore = useAuthStore();
+  console.log(JWTService.getToken());
+  // alert(34);
+  // before page access check if page requires authentication
+  if (to.meta.middleware == "auth") {
+    authStore.verifyAuth();
+    if (authStore.authenicated) {
+          next();
+    } else {
+      next('/');
+    }
+  } else {
+    next();
+  }
+
+  // Scroll page to top on every route change
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+});
 
 export default router
