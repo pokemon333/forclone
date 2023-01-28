@@ -12,6 +12,7 @@ import ShowCategory from '../views/admin/categories/ShowCategory.vue'
 import CreateSlider from '../views/admin/sliders/create.vue'
 import PublicView from '../views/PublicView.vue'
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
