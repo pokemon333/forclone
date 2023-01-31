@@ -1,15 +1,15 @@
 <template>
   <div>
-    <div class="w-full h-14 flex justify-between sticky top-0 bg-white">
+    <div class="sticky top-0 flex justify-between w-full bg-white h-14">
       <div class="w-2/12 h-full">
         <img src="../../../public/images/projectlogo.jpeg" class="h-full" alt />
       </div>
-      <div class="w-5/12 h-full flex justify-evenly py-4">
+      <div class="flex w-5/12 h-full py-4 justify-evenly">
         <a href>Home</a>
         <a href>Services</a>
         <a href>Content</a>
         <a href>About us</a>
-        <button class="rounded-full bg-violet-700 w-32 h-9 relative bottom-1">Contact Now</button>
+        <button class="relative w-32 rounded-full bg-violet-700 h-9 bottom-1">Contact Now</button>
       </div>
     </div>
 
@@ -17,9 +17,9 @@
       <div v-for="(slide,index) in sliders" :key="index" class="transition delay-150">
         <div v-if="visibleslider === index" class="h-full transition delay-150">
           <img :src="slide" id="image" alt class />
-          <div class="w-full flex justify-between">
-            <i @click="previous"  class="fa-solid text-white fa-angles-left fa-2xl relative bottom-80"></i>
-            <i @click="next" class="fa-solid fa-angles-right text-white fa-2xl relative bottom-80"></i>
+          <div class="flex justify-between w-full">
+            <i @click="previous"  class="relative text-white fa-solid fa-angles-left fa-2xl bottom-80"></i>
+            <i @click="next" class="relative text-white fa-solid fa-angles-right fa-2xl bottom-80"></i>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
       <div class="h-full">
         <div class="flex justify-evenly">
           <!-- card 1 -->
-          <div class="rounded-lg shadow-lg bg-white w-80">
+          <div class="bg-white rounded-lg shadow-lg w-80">
             <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
               <img
                 class="rounded-t-lg"
@@ -43,8 +43,8 @@
               />
             </a>
             <div class="p-6">
-              <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-              <p class="text-gray-700 text-base mb-4">
+              <h5 class="mb-2 text-xl font-medium text-gray-900">Card title</h5>
+              <p class="mb-4 text-base text-gray-700">
                 Some quick example text to build on the card title and make up the bulk of the card's
                 content.
               </p>
@@ -55,7 +55,7 @@
             </div>
           </div>
           <!-- card 2 -->
-          <div class="rounded-lg shadow-lg bg-white w-80">
+          <div class="bg-white rounded-lg shadow-lg w-80">
             <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
               <img
                 class="rounded-t-lg"
@@ -64,8 +64,8 @@
               />
             </a>
             <div class="p-6">
-              <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-              <p class="text-gray-700 text-base mb-4">
+              <h5 class="mb-2 text-xl font-medium text-gray-900">Card title</h5>
+              <p class="mb-4 text-base text-gray-700">
                 Some quick example text to build on the card title and make up the bulk of the card's
                 content.
               </p>
@@ -77,7 +77,7 @@
           </div>
 
           <!-- card 3 -->
-          <div class="rounded-lg shadow-lg bg-white w-80">
+          <div class="bg-white rounded-lg shadow-lg w-80">
             <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
               <img
                 class="rounded-t-lg"
@@ -86,8 +86,8 @@
               />
             </a>
             <div class="p-6">
-              <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-              <p class="text-gray-700 text-base mb-4">
+              <h5 class="mb-2 text-xl font-medium text-gray-900">Card title</h5>
+              <p class="mb-4 text-base text-gray-700">
                 Some quick example text to build on the card title and make up the bulk of the card's
                 content.
               </p>
@@ -101,7 +101,7 @@
       </div>
     </div>
 
-    <div class="h-2/6 mt-20 mb-20">
+    <div class="mt-20 mb-20 h-2/6">
       <div class="h-20">
         <div class="mx-auto w-60">
           <h1 class="mx-auto text-2xl">OUR PROJECTS</h1>
@@ -111,14 +111,14 @@
         <div class="flex">
           <div class="flex ml-26">
             <img
-              class="w-5/12 ml-36 mr-20"
+              class="w-5/12 mr-20 ml-36"
               src="https://mdbootstrap.com/img/new/standard/nature/182.jpg"
               alt
             />
 
             <div class="w-96">
-              <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-              <p class="text-gray-700 text-base mb-4 leading-8">
+              <h5 class="mb-2 text-xl font-medium text-gray-900">Card title</h5>
+              <p class="mb-4 text-base leading-8 text-gray-700">
                 Some quick example text to build on the card title and make up the bulk of the card's
                 Loram has built a decades-long partnership with the rail industry offering the most innovative portfolio of equipment crewed by our expertly-trained operators and technicians. Our contracted services capabilities assure our customers of superior maintenance, unsurpassed productivity and maximum rail availability.
               </p>
@@ -130,9 +130,9 @@
       <div class="h-full mt-20">
         <div class="flex">
           <div class="flex ml-26">
-            <div class="w-96 ml-44 mr-40">
-              <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-              <p class="text-gray-700 text-base mb-4 leading-8">
+            <div class="mr-40 w-96 ml-44">
+              <h5 class="mb-2 text-xl font-medium text-gray-900">Card title</h5>
+              <p class="mb-4 text-base leading-8 text-gray-700">
                 Some quick example text to build on the card title and make up the bulk of the card's
                 Loram has built a decades-long partnership with the rail industry offering the most innovative portfolio of equipment crewed by our expertly-trained operators and technicians. Our contracted services capabilities assure our customers of superior maintenance, unsurpassed productivity and maximum rail availability.
               </p>
@@ -150,7 +150,6 @@
   </div>
 </template>
 <script>
-import carousel from "../components/carousel/carousel.vue";
 export default {
   data() {
     return {
@@ -162,7 +161,6 @@ export default {
       visibleslider: 0
     };
   },
-
   methods: {
     next() {
       if (this.visibleslider == this.sliders.length - 1) {
@@ -171,7 +169,6 @@ export default {
         this.visibleslider++;
       }
     },
-
     previous() {
       if (this.visibleslider == 0) {
         this.visibleslider = this.sliders.length -1;
@@ -192,7 +189,6 @@ export default {
   from {
     opacity: 70%;
   }
-
   to {
     opacity: 100%;
   }

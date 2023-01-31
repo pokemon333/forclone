@@ -1,6 +1,5 @@
 <template>
 <div :class="theme == 'dark'? 'darkTheme': ''">
-     <h1>{{theme}}</h1>                                <!-- Nav Bar -->
      <div class="container sticky top-0 z-40 text-gray-500 bg-gray-100">
           <div class="flex justify-between w-screen border-b-2 border-gray-200 navBar">
                <router-link to="/" class="p-2">

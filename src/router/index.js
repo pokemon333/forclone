@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AdminDashboard from '../views/admin/AdminDashboard.vue'
+import Register from "../views/admin/login_register/Register.vue"
+import Login from "../views/admin/login_register/Login.vue"
 import Sliders from '../views/admin/sliders/Sliders.vue'
 import Categories from '../views/admin/categories/Categories.vue'
 import Contents from '../views/admin/contents/Contents.vue'
@@ -17,6 +19,16 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/admin/register',
+      name: "AdminRegister",
+      component : Register
+    },
+    {
+      path : '/admin/login',
+      name : 'AdminLogin',
+      component : Login
+    },
+    {
       path: '/',
       name: 'home',
       component: ClientView
@@ -26,11 +38,7 @@ const router = createRouter({
       name: 'publicview',
       component: PublicView
     },
-    {
-      path: '/slidersCreate',
-      name: 'slidersCreate',
-      component: CreateSlider
-    },
+
     {
       path:'/admin',
       name:'admin',
