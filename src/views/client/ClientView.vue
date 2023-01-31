@@ -1,6 +1,6 @@
 <template>
-<div class="theme">
-                                        <!-- Nav Bar -->
+<div :class="theme == 'dark'? 'darkTheme': ''">
+     <h1>{{theme}}</h1>                                <!-- Nav Bar -->
      <div class="container sticky top-0 z-40 text-gray-500 bg-gray-100">
           <div class="flex justify-between w-screen border-b-2 border-gray-200 navBar">
                <router-link to="/" class="p-2">
@@ -56,7 +56,7 @@
                     </div>
                </div>
 
-               <div class="flex items-center w-3/4 m-16 mx-auto forReverse" key="div4">
+               <div class="flex items-center w-3/4 m-16 mx-auto " data-aos="zoom-in" key="div4">
                     <img src="../../../public/images/lms2.jpg" class="rounded" style="width:50%; height:50%;"  alt="">
                     <div class="relative p-3 ml-4">
                          <h1 class="m-1 ml-0 text-2xl">Content Management System</h1>
@@ -76,11 +76,12 @@
 <script>
 export default {
      mounted() {
-          this.scrollTrigger();
-          this.checkTheme();
+          // this.scrollTrigger();
+          // this.checkTheme();
      },
      data(){
           return{
+               theme: 'light',
                navItems : [
                     {
                          name: "Home",
@@ -107,46 +108,47 @@ export default {
      },
      methods:{
           scrollTrigger(){
-               const blogElements = document.querySelectorAll('.forReverse');
-               const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                         if (entry.isIntersecting) {
-                         entry.target.classList.add('animateBlogs');
-                         }else{
-                         entry.target.classList.remove('animateBlogs');
-                         }
-                    })
-               });
-               blogElements.forEach((el) => observer.observe(el));
+               // const blogElements = document.querySelectorAll('.forReverse');
+               // const observer = new IntersectionObserver((entries) => {
+               //      entries.forEach((entry) => {
+               //           if (entry.isIntersecting) {
+               //           entry.target.classList.add('animateBlogs');
+               //           }else{
+               //           entry.target.classList.remove('animateBlogs');
+               //           }
+               //      })
+               // });
+               // blogElements.forEach((el) => observer.observe(el));
           },
                // check theme
           checkTheme(){
-               const theme = document.querySelector('.theme');
-               const navBar = document.querySelector('.navBar');
-               if (localStorage.theme == "dark") {
-                    theme.classList.add('darkTheme');
-                    navBar.classList.add('darkTheme');
-                    navBar.style.border = "none";
-               } else {
-                    theme.classList.remove('darkTheme');
-                    navBar.classList.remove('darkTheme');
-               }
+               // const theme = document.querySelector('.theme');
+               // const navBar = document.querySelector('.navBar');
+               // if (localStorage.theme == "dark") {
+               //      theme.classList.add('darkTheme');
+               //      navBar.classList.add('darkTheme');
+               //      navBar.style.border = "none";
+               // } else {
+               //      theme.classList.remove('darkTheme');
+               //      navBar.classList.remove('darkTheme');
+               // }
           },
           toggleTheme(){
-               const theme = document.querySelector('.theme');
-               const navBar = document.querySelector('.navBar');
-               if (localStorage.theme == 'dark') {
-                    localStorage.theme = "light";
-                    theme.classList.remove('darkTheme');
-                    navBar.classList.remove('darkTheme');
-                    navBar.style.border = "none";
-               } else{
-                    localStorage.theme = "dark";
-                    theme.classList.add('darkTheme');
-                    navBar.classList.add('darkTheme');
-                    navBar.style.border = "none";
+               this.theme = this.theme == 'light'? 'dark': 'light';
+               // const theme = document.querySelector('.theme');
+               // const navBar = document.querySelector('.navBar');
+               // if (localStorage.theme == 'dark') {
+               //      localStorage.theme = "light";
+               //      theme.classList.remove('darkTheme');
+               //      navBar.classList.remove('darkTheme');
+               //      navBar.style.border = "none";
+               // } else{
+               //      localStorage.theme = "dark";
+               //      theme.classList.add('darkTheme');
+               //      navBar.classList.add('darkTheme');
+               //      navBar.style.border = "none";
 
-               }
+               // }
           }
      }
 }
