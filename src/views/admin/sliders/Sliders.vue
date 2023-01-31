@@ -25,8 +25,8 @@ export default {
     },
     submit(e) {
       e.preventDefault();
-      ApiService.post("/admin/sliders/", this.form).then(res => {
-        console.log(res.data.data);
+      ApiService.post("/admin/sliders/", this.form).then(c => {
+        console.log(c.data.data);
       })
     },
 

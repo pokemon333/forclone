@@ -19,6 +19,7 @@ import PublicView from '../views/PublicView.vue'
 import { useAuthStore } from '../../store/auth';
 import JWTService from '../JWTService'
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
