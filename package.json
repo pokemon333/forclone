@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "axios": "^1.2.2",
+    "pinia": "^2.0.29",
+    "swiper": "^8.4.6",
     "vue": "^3.2.45",
     "vue-animate-onscroll": "^1.0.8",
     "vue-axios": "^3.5.2",

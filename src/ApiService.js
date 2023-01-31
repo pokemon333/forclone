@@ -1,5 +1,6 @@
 import VueAxios from 'vue-axios'
 import axios from 'axios'
+import JWTService from './JWTService';
 
 class ApiService  {
     vueInstance;
@@ -8,6 +9,10 @@ class ApiService  {
        ApiService.vueInstance = app;
        ApiService.vueInstance.use(VueAxios, axios);
        ApiService.vueInstance.axios.defaults.baseURL = "http://localhost:8000/api/"; 
+    }
+    static setHeader(){
+        ApiService.vueInstance.axios.defaults.headers.common["Authorization"] = `Bearer ${JWTService.getToken()}`;
+        ApiService.vueInstance.axios.defaults.headers.common["Accept"] ="application/json";
     }
     static get(url){
         return ApiService.vueInstance.axios.get(url);
