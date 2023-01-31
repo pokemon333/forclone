@@ -3,23 +3,29 @@ import HomeView from '../views/HomeView.vue'
 import AdminDashboard from '../views/admin/AdminDashboard.vue'
 import Sliders from '../views/admin/sliders/Sliders.vue'
 import Categories from '../views/admin/categories/Categories.vue'
+import CreateCategory from '../views/admin/categories/CreateCategory.vue'
+import EditCategory from '../views/admin/categories/EditCategory.vue'
 import Contents from '../views/admin/contents/Contents.vue'
 import Customers from '../views/admin/Customers.vue'
 import Roles from '../views/admin/Roles.vue'
 import Messages from '../views/admin/Messages.vue'
 import Comments from '../views/admin/Messages.vue'
+
+import ClientVIew from '../views/client/ClientView.vue'
+
 import ShowCategory from '../views/admin/categories/ShowCategory.vue'
 import CreateSlider from '../views/admin/sliders/create.vue'
 import PublicView from '../views/PublicView.vue'
 import { useAuthStore } from '../../store/auth';
 import JWTService from '../JWTService'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: ClientVIew
     },
     {
       path: '/publicview',
@@ -54,12 +60,17 @@ const router = createRouter({
           path:'categories',
           name: 'categories',
           component:Categories,
-          children:[
-            {
-              path:'show',
-              component:ShowCategory
-            }
-          ]
+        },
+        {
+          path:'category/create',
+          name: 'CreateCategory',
+          component: CreateCategory
+        },
+        {
+          path:'category/:slug',
+          name:'EditCategory',
+          component: EditCategory,
+          props : true
         },
         {
           path:'contents',
@@ -86,6 +97,11 @@ const router = createRouter({
           component:Comments
         },
       ]
+    },
+    {
+      path: '/client',
+      name:'ClientView',
+      component: ClientVIew
     }
 
   ]

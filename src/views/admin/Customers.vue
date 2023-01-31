@@ -1,6 +1,6 @@
 <script >
-import { watch } from 'vue';
-import TheWelcome from '../../components/TheWelcome.vue';
+
+
 </script>
 
 <template>
