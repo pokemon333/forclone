@@ -10,14 +10,14 @@ import Customers from '../views/admin/Customers.vue'
 import Roles from '../views/admin/Roles.vue'
 import Messages from '../views/admin/Messages.vue'
 import Comments from '../views/admin/Messages.vue'
-
+import ClientVIew from '../views/client/ClientView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: ClientVIew
     },
     {
       path:'/admin',
@@ -36,13 +36,14 @@ const router = createRouter({
         },
         {
           path:'category/create',
-          name: 'createCategory',
+          name: 'CreateCategory',
           component: CreateCategory
         },
         {
-          path:'category/edit',
-          name:'editCategory',
-          component: EditCategory
+          path:'category/:slug',
+          name:'EditCategory',
+          component: EditCategory,
+          props : true
         },
         {
           path:'contents',
@@ -69,6 +70,11 @@ const router = createRouter({
           component:Comments
         },
       ]
+    },
+    {
+      path: '/client',
+      name:'ClientView',
+      component: ClientVIew
     }
 
   ]

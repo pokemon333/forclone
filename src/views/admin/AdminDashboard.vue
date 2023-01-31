@@ -49,11 +49,9 @@ export default {
                                           route: "messages",
                                           icon: "fa-solid fa-envelope"
                                     }
-
                               ]
                         }
                   ],
-
             }
       },
       methods:{
@@ -65,20 +63,19 @@ export default {
 
 <template>
       <main>
-            <div class="flex w-full">
+            <div class="flex justify-end w-full">
                   <!-- SIDE BAR -->
-                  <div class="flex flex-col w-1/6 h-screen text-gray-500 bg-gray-100">
+                  <div class="fixed left-0 flex flex-col w-1/6 h-screen text-gray-500 bg-gray-100">
                         <!-- logo -->
                         <router-link to="/"
-                              class="pt-2 pb-2 text-xl italic border-b-2 px-14 border-gray hover:text-blue-700">
+                              class="py-3 text-xl italic border-b-2 px-14 border-gray hover:text-blue-700">
                               <img src="../../../public/images/logo.png" class="w-2/3" alt="">
                         </router-link>
 
-                        <!-- SIDE BAR -->
                         <div v-for="group, g_index in nav_groups" :key="g_index" class="p-4 border-b-2 border-gray px-7">
                               <h1 class="px-6 pb-2 font-bold">{{ group.title }}</h1>
                               <p v-for="menu, index in group.nav_menus" :key="index"
-                                    class="p-2 hover:text-blue-500 hover:-translate-y-1">
+                                    class="p-2 hover:text-blue-500 hover:scale-110">
                               <router-link :to="{ name: menu.route }"><i class="text-sm text-gray-500" :class=menu.icon ></i>
                                           {{ menu.title }}</router-link>
                               </p>
@@ -86,9 +83,9 @@ export default {
 
                   </div>
                   <!-- MAIN FEED -->
-                  <div class="w-5/6">
+                  <div class="w-5/6 ">
                         <!-- NAV  BAR -->
-                        <div class="flex flex-row bg-gray-200 h-14">
+                        <div class="fixed flex flex-row w-5/6 bg-gray-200 h-14">
                               <!-- search box -->
                               <form action="" class="flex flex-row justify-center w-2/3 p-1 mt-2">
                                     <input type="text"
