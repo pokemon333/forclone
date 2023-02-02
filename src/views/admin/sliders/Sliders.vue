@@ -1,6 +1,5 @@
 <script >
 import axios from "axios";
-import createSliders from "./create.vue";
 import ApiService from "../../../ApiService";
 
 export default {
@@ -76,15 +75,15 @@ export default {
             </thead>
             <tbody v-for="(image, index) in this.slidersDatas" :key="index">
               <tr>
-                <td class="pl-8 pt-2">{{ image.id }}</td>
+                <td class="pt-2 pl-8">{{ image.id }}</td>
                 <td class="pl-10">
-                  <img :src="image.image" class="w-20 h-20 pt-3 object-fill" />
+                  <img :src="image.image" class="object-fill w-20 h-20 pt-3" />
                 </td>
-                <td class="pl-12 pt-2">{{ image.status }}</td>
+                <td class="pt-2 pl-12">{{ image.status }}</td>
                 <td>
                   <button
                     v-on:click="show(image.id)"
-                    class="bg-transparent hover:bg-sky-300 text-sky-400 font-semibold hover:text-white py-2 px-4 border ml-2 border-sky-400 hover:border-transparent rounded"
+                    class="px-4 py-2 ml-2 font-semibold bg-transparent border rounded hover:bg-sky-300 text-sky-400 hover:text-white border-sky-400 hover:border-transparent"
                   >show</button>
                 </td>
               </tr>
@@ -97,14 +96,14 @@ export default {
     <!-- This is the create form -->
 
     <div v-if="this.display=='create'">
-      <div class="flex justify-center bg-slate-100 w-full">
+      <div class="flex justify-center w-full bg-slate-100">
         <div class="w-3/6 mt-3">
-          <div class="ml-20 flex justify-center p-6 rounded-xl shadow-lg bg-white max-w-sm">
+          <div class="flex justify-center max-w-sm p-6 ml-20 bg-white shadow-lg rounded-xl">
             <form>
-              <div class="form-group mb-6">
+              <div class="mb-6 form-group">
                 <!-- <label
                   for="exampleInputEmail1"
-                  class="form-label inline-block mb-2 text-gray-700"
+                  class="inline-block mb-2 text-gray-700 form-label"
                 >Status</label>
                 <input
                   type="text"
@@ -113,7 +112,7 @@ export default {
                 />-->
                 <label
                   for="exampleInputEmail1"
-                  class="form-label inline-block mb-2 text-gray-700"
+                  class="inline-block mb-2 text-gray-700 form-label"
                 >order_by</label>
                 <input
                   type="number"
@@ -121,8 +120,8 @@ export default {
                   class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 />
               </div>
-              <div class="form-group mb-6">
-                <label class="form-label inline-block mb-2 text-gray-700">Image</label>
+              <div class="mb-6 form-group">
+                <label class="inline-block mb-2 text-gray-700 form-label">Image</label>
                 <input
                   type="file"
                   @change="fileUpload"
@@ -142,25 +141,25 @@ export default {
     <!-- This is the show form -->
 
     <div v-if="this.display=='show'">
-      <div class="flex justify-center bg-slate-100 w-full">
+      <div class="flex justify-center w-full bg-slate-100">
         <div class="w-3/6 mt-3">
           <div class="flex justify-center">
-            <div class="rounded-lg shadow-lg bg-white max-w-sm">
+            <div class="max-w-sm bg-white rounded-lg shadow-lg">
               <img class="rounded-t-lg w-96 h-96" :src="this.showData.image" alt />
               <div class="p-6">
                 <h1>status : {{ this.showData.status }}</h1>
               </div>
               <button
                 @click="Delete(this.showData.id)"
-                class="bg-transparent hover:bg-red-300 text-red-400 font-semibold hover:text-white py-2 px-4 border ml-2 border-red-400 hover:border-transparent rounded"
+                class="px-4 py-2 ml-2 font-semibold text-red-400 bg-transparent border border-red-400 rounded hover:bg-red-300 hover:text-white hover:border-transparent"
               >Delete</button>
               <button
                 @click="edit(this.showData.id)"
-                class="bg-transparent ml-2 mb-2 hover:bg-yellow-300 text-yellow-300 font-semibold hover:text-white py-2 px-4 border border-yellow-300 hover:border-transparent rounded"
+                class="px-4 py-2 mb-2 ml-2 font-semibold text-yellow-300 bg-transparent border border-yellow-300 rounded hover:bg-yellow-300 hover:text-white hover:border-transparent"
               >Edit</button>
               <button
                 @click="this.display = 'index'"
-                class="bg-transparent ml-2 mb-2 hover:bg-gray-500 text-black font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+                class="px-4 py-2 mb-2 ml-2 font-semibold text-black bg-transparent border border-gray-500 rounded hover:bg-gray-500 hover:text-white hover:border-transparent"
               >Back</button>
             </div>
           </div>

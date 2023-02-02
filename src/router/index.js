@@ -4,15 +4,16 @@ import AdminDashboard from '../views/admin/AdminDashboard.vue'
 import Register from "../views/admin/login_register/Register.vue"
 import Login from "../views/admin/login_register/Login.vue"
 import Sliders from '../views/admin/sliders/Sliders.vue'
-import Categories from '../views/admin/categories/Categories.vue'
-import Contents from '../views/admin/contents/Contents.vue'
+import Categories from '../views/admin/categories/Index.vue'
+import CreateCategory from '../views/admin/categories/Create.vue'
+import EditCategory from '../views/admin/categories/Edit.vue'
+import Contents from '../views/admin/contents/Index.vue'
 import Customers from '../views/admin/Customers.vue'
 import Roles from '../views/admin/Roles.vue'
 import Messages from '../views/admin/Messages.vue'
 import Comments from '../views/admin/Messages.vue'
-import CreateSlider from '../views/admin/sliders/create.vue'
 import PublicView from '../views/PublicView.vue'
-import ClientView from '../views/client/ClientView.vue'
+import ClientView from '../views/Index.vue'
 import { useAuthStore } from '../../store/auth';
 import JWTService from '../JWTService'
 const router = createRouter({
@@ -51,23 +52,23 @@ const router = createRouter({
           path:'sliders',
           name: 'sliders',
           component:Sliders,
-          children:[
-            {
-              path:'create',
-              component:CreateSlider,
-            }
-          ]
+
         },
         {
           path:'categories',
           name: 'categories',
           component:Categories,
-          children:[
-            // {
-            //   path:'show',
-            //   component:ShowCategory
-            // }
-          ]
+        },
+        {
+          path:'category/create',
+          name: 'CreateCategory',
+          component: CreateCategory
+        },
+        {
+          path:'category/:slug',
+          name:'EditCategory',
+          component: EditCategory,
+          props : true
         },
         {
           path:'contents',

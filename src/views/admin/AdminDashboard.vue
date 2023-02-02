@@ -71,7 +71,7 @@ export default {
         <!-- logo -->
         <router-link
           to="/"
-          class="pt-2 pb-2 text-xl italic border-b-2 px-14 border-gray hover:text-blue-700"
+          class="pt-2 pb-3 text-xl italic border-b-2 px-14 border-gray hover:text-blue-700"
         >
           <img src="../../../public/images/logo.png" class="w-2/3" alt />
         </router-link>
@@ -107,17 +107,17 @@ export default {
               placeholder="search"
             />
             <button
-              class="px-1 ml-2 text-sm text-gray-500 bg-transparent border border-gray-400 rounded h-2/3 hover:text-white hover:border-transparent hover:bg-gray-700"
+              class="px-1 ml-2 text-sm text-gray-500 bg-transparent border border-gray-400 rounded h-2/3 hover:text-blue-500"
             >search</button>
           </form>
 
           <!-- noti + profile -->
           <div class="flex flex-row justify-end w-1/3">
             <div class="flex flex-row mx-4">
-              <a href class="mx-3 my-5 ml-16 text-gray-500 hover:text-blue-500">
+              <a href class="mx-3 my-4 ml-16 text-gray-500 hover:text-blue-500">
                 <i class="far fa-comment"></i>
               </a>
-              <a href class="mx-4 my-5 text-gray-500 hover:text-blue-500">
+              <a href class="mx-4 my-4 text-gray-500 hover:text-blue-500">
                 <i class="fas fa-bell"></i>
               </a>
               <div @click="open = !open" class="relative flex flex-row mt-1 ml-8 cursor-pointer">

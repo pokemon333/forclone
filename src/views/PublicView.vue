@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="flex h-screen mt-3">
+    <!-- <div class="flex h-screen mt-3">
       <div v-for="(slide,index) in sliders" :key="index" class="transition delay-150">
         <div v-if="visibleslider === index" class="h-full transition delay-150">
           <img :src="slide" id="image" alt class />
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="h-2/6">
       <div class="h-20">
@@ -150,7 +150,22 @@
   </div>
 </template>
 <script>
+import { CCarousel } from '@coreui/vue'
+import { CCarouselItem } from '@coreui/vue'
 export default {
+  components: {
+    CCarousel,
+    CCarouselItem
+  },
+  mounted() {
+    const prevBtn = document.querySelector('.carousel-control-prev-icon');
+    prevBtn.style.display = "none";
+    const nextButton = document.querySelector('.carousel-control-next')
+    nextButton.style.display = "none";
+    setInterval( () => {
+      nextButton.click();
+    }, 2000)
+  },
   data() {
     return {
       sliders: [
